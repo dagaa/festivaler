@@ -1,0 +1,4 @@
+id,festivalnavn,kategori,dato,klokkeslett,adresse,x,y,beskrivelse,brødtekst,URL,check1,check2,check3,check4,check5,check6,check7,check8,check9,check10,check11,check12
+1,Sommerfesten,Musikkfestival,05.07.2014,11:00 - 23:59,Giske,6.036301,62.509703,Musikkfestival,Her kommer en brødtekst,http://momentium.no,Voksen,Familie,Barnevennlig,,Musikk,Mat,Alkohol,,,Pop/Rock,Elektronika,
+2,Jugendfest,Musikkfestival,22-23.08.2014,18:00-01:00,"Color Line Stadion, Ålesund",6.187298,62.469661,Musikkfestival,Her kommer en brødtekst,http://momentium.no,Voksen,,,Ungdom,Musikk,Mat,Alkohol,Aldersgrense,,Pop/Rock,,
+3,Molde Jazzfestival,Musikkfestival,14-19.07.2014,12:00-02:00,Molde,7.158794,62.737444,Jazzfestival,Her kommer en brødtekst,http://www.moldejazz.no,Voksen,Familie,Barnevennlige,Ungdom,Musikk,Mat,Alkohol,,Markedsplass,Pop/Rock,Elektronika,Jazz
