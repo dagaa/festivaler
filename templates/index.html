@@ -9,24 +9,23 @@
         <h1>Deaths during the L.A. riots</h1>
         <table border=0 cellpadding=7>
             <tr>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Type</th>
-                <th>Address</th>
-                <th>Age</th>
-                <th>Gender</th>
-                <th>Race</th>
+                <th>Festivalnavn</th>
+                <th>Hva</th>
+                <th>Hvor</th>
+                <th>Når</th>
+                <th>Hvem</th>
+                <th>Hvor mye</th>
+                <th>Mer</th>
             </tr>
         {% for obj in object_list %}
             <tr>
-                <td><a href="{{ obj.id }}/">{{ obj.full_name }}</a></td>
-                <td>{{ obj.full_name }}</td>
-                <td>{{ obj.date }}</td>
-                <td>{{ obj.type }}</td>
-                <td>{{ obj.address }}</td>
-                <td>{{ obj.age }}</td>
-                <td>{{ obj.gender }}</td>
-                <td>{{ obj.race }}</td>
+                <td><a href="{{ obj.id }}/">{{ obj.festival }}</a></td>
+                <td>{{ obj.hva }}</td>
+                <td>{{ obj.hvor }}</td>
+                <td>{{ obj.når }}</td>
+                <td>{{ obj.hvem }}</td>
+                <td>{{ obj.koster }}</td>
+                <td>{{ obj.mer }}</td>
             </tr>
         {% endfor %}
         </table>
