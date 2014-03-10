@@ -1,34 +1,57 @@
 <!doctype html>
 <html lang="en">
+<img src="http://interaktiv.smp.no/2014/Festivaler/images/stripe.jpg" width="100%" height="100">
     <head>
         <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+        <link href='http://fonts.googleapis.com/css?family=Dosis|Bad+Script|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
         <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2"></script>
+        <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+        <!--  Mobilview først-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-    	<div id="map" style="width:100%; height:800px;"></div>
-        <h1>Festivaler i Nordvest</h1>
-        <table border=0 cellpadding=7>
+ <div class="container" style=font-family:"Open+Sans" align="center">
+    <h1>
+        <img src="http://interaktiv.smp.no/2014/Festivaler/images/tittel.png" width="980px" height="128" alt="Festivaler i Nordvest. Din festivalguide">
+        </h1>
+        <br>
+   	<div id="map" style="width:100%; height:400px;"></div>
+    <br><br>
+<table border=00 cellpadding=7 class="table" style="width:30%;float:left;font-family:Dosis;font-size:20px;margin-right:40px">
+<tr><td colspan="2"><img src="http://interaktiv.smp.no/2014/Festivaler/images/krav.png" width="200px" height="75px" alt="Hva vil du ha?"></td></tr>     
+<tr><td><input type=checkbox> Musikk</td><td><input type=checkbox> Mat</td></tr>
+<tr><td><input type=checkbox> Barnevennlig</td><td><input type=checkbox> Familie</td></tr>
+<tr><td><input type=checkbox> Ungdom</td><td><input type=checkbox> Voksen</td></tr>
+<tr><td><input type=checkbox> Alkoholservering</td><td><input type=checkbox> Marked</td></tr>
+<tr><td><input type=checkbox> Pop/Rock</td><td><input type=checkbox> Jazz</td></tr>
+
+</table>
+
+        <table border=0 cellpadding=7 class="table" style="width:30%;float:left;padding-right:50px;font-family:Dosis;font-size:18px;margin-left:10px">
             <tr>
+            <tr><td colspan="4"><img src="http://interaktiv.smp.no/2014/Festivaler/images/liste.png" width="400px" height="75px" alt="Hva vil du ha?" a></td></tr>  
                 <th>Festivalnavn</th>
-                <th>Hva</th>
+                <th>Når</th>
                 <th>Hvor</th>
-                <th>Naar</th>
-                <th>Hvem</th>
-                <th>Hvor mye</th>
-                <th>Mer</th>
+                <th>Type festival</th>                
             </tr>
         {% for obj in object_list %}
             <tr>
-                <td><a href="{{ obj.id }}/">{{ obj.festival }}</a></td>
-                <td>{{ obj.hva }}</td>
-                <td>{{ obj.hvor }}</td>
-                <td>{{ obj.naar }}</td>
-                <td>{{ obj.hvem }}</td>
-                <td>{{ obj.koster }}</td>
-                <td>{{ obj.mer }}</td>
+                <td nowrap><a href="{{ obj.id }}/">{{ obj.festival }}</a></td>
+                <td nowrap>{{ obj.naar }}</td>
+                <td nowrap>{{ obj.hvor }}</td>
+                <td nowrap>{{ obj.hva }}</td>
+       
             </tr>
         {% endfor %}
         </table>
+
+
+     </div> <!-- /container -->
+
         <script type="text/javascript">
             var map = L.map('map').setView([62.324704, 5.918884], 9);
             var mapquestLayer = new L.TileLayer('http://{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
