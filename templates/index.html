@@ -1,48 +1,188 @@
 <!doctype html>
 <html lang="en">
-    <div style="width:100%;height:30%;background-color:#e8e8e8;">
-         <a href="http://www.smp.no"> <img class="displayed" style="width:80%" src="http://interaktiv.smp.no/2014/Festivaler/images/stripe.jpg" />
-    </div> </a>
-    <div style="width:100%;height:25%;background-color:#0173b1;">
-       <a href="http://www.smp.no"> <img class="displayed" style="width:90%"src="http://interaktiv.smp.no/2014/Festivaler/images/stripe2.jpg" />
-    </div> </a>
-      <!--    <img style="width:100%"src="http://interaktiv.smp.no/2014/Festivaler/images/stripe3.jpg" /> -->
+  <head>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|Roboto+Slab|Dosis' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="http://interaktiv.smp.no/2014/Festivaler/main.css"/>
+    <link rel="shortcut icon" type="image/png" href="http://interaktiv.smp.no/2014/Festivaler/images/favF.png"/>
     
-    <head>
-        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
-        <link href='http://fonts.googleapis.com/css?family=Dosis|Bad+Script|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="http://interaktiv.smp.no/2014/Festivaler/main.css">
-       
-        <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2"></script>
-        <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2">
+    </script>
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js">
+    </script>
+    <script type="text/javascript" src="http://interaktiv.smp.no/2014/Festivaler/js/pym.js" ></script>
+    
+    <!--  Mobilview først-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  
+  <!-- Top Gammel
+  <div style="width:100%;height:30%;background-color:#e8e8e8;">
+    <a href="http://www.smp.no"/>
+      
+      <img class="displayed" style="width:80%" src="http://interaktiv.smp.no/2014/Festivaler/images/stripe.jpg" />
+    </div>
+    
+  </a>
+  
+  <div style="width:100%;height:25%;background-color:#0173b1;">
+    <a href="http://www.smp.no"/>
+      
+      <img class="displayed" style="width:90%"src="http://interaktiv.smp.no/2014/Festivaler/images/stripe2.jpg" />
+    </div>
+    
+  </a>
+  -->
+ <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://www.smp.no" target="_blank"><img src="http://interaktiv.smp.no/2014/Festivaler/images/S.png"></a> 
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#guide">Festivalguiden</a></li>
+        <li><a href="#velg">Velg</a></li>
+        <li><a href="#alle">Se alle</a></li>
+        <li><a href="#om">Om</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  
 
 
-        <!--  Mobilview først-->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
- <div class="container" style=font-family:"Open+Sans" align="center">
-            <!--   <img src="http://interaktiv.smp.no/2014/Festivaler/images/tittel.png" width="100%" alt="Festivaler i Nordvest. Din festivalguide">
-            <br> <br>-->
-<div class="row">
-  <div class="col-md-3"> <a class="twitter-timeline" style="height:40" href="https://twitter.com/search?q=%23smpno" data-widget-id="458585136343162880">Tweets om «#smpno»</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></div>
- 
-  <div class="col-md-9"><div id="map" style="height:400px"></div></div>
+  <!--Body start-->
+  <body style= "background-color:#0b1308; padding-top:70px;font-family:Dosis;font-size:2em">
+    <div class="container" style="padding:0">
+  <!--Annonse-->
+    <div>
+      <img  class="displayed" width="100%"src="http://interaktiv.smp.no/2014/Festivaler/images/Annonse.jpg" />
+    </div>
+    <!--Logo start-->
+    <div align="center">    
+    <a name="guide" />
+    <img width="100%" src="http://interaktiv.smp.no/2014/Festivaler/images/topp2.jpg">
+    <img width="60%"src="http://interaktiv.smp.no/2014/Festivaler/images/logo.png">
+    <p class="overskrift"> Finn festivalen i Nordvest som passer for deg!</p>
+    </div>
+  <!--Velg start-->
+     <a name="velg" />
+     <div>
+     </div>
+  <!--Guide start-->
+ <div style="width:100%;">
+            </div>
+
+<div class="row datacontainer displayed">
+<div class="festivaldata">
+  <div id="map" style="height:400px">
+          </div>
 </div>
-    
+
+  <div class="col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Back in the fields</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Båtfestivalen</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Brandalsdagene</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Brøvøllsfestivalen</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Dei nynorske festspela</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Fjord Cadenza</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Fosnavåg rock</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Gapskrattfestivalen</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Go with the Flø</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Hopp i havet</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Indiefestivalen på Bjørke</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Jugendfest</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Kulturdagane i Hornindal</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Kyrkjehola kulturbeite</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Makrellfestivalen</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Malakoff</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Måløy havfiskefestival</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Måløydagane</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Maritim sommerfestival i Fosnavåg</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Maritime dagar i Gjerdsvika</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Matfestivalen</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Midsundfestivalen</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Midtsommerjazz</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Mitsommardagar i Norddal</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Moldejazz</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Myldredagane i Brattvåg</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Naturfestivalen</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Norsk fjellfestival</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Opplev Hareid</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Ørskog bluesfestival</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Raumarock</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Smak av Ulstein</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Sommerdagane i Utvik</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Sommerdager på Hellesylt</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Sommerfesten</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Sykkylvsdagane</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Trandalsblues</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Trebåtfestivalen</div>
+  <div class=" col-md-4 festivalknapp"><img width="30px"src="http://interaktiv.smp.no/2014/Festivaler/images/F.jpg" class="img-circle"> <br>Vannylvsråkk</div>
+</div>
+
+
+
+
+
+<!---buttons vertikale
+<div class="btn-group-vertical">
+  <button type="button" class="btn btn-primary btn-lg btn-font">Mai</button>
+  <button type="button" class="btn btn-primary btn-lg btn-font">Juni</button>
+  <button type="button" class="btn btn-primary btn-lg btn-font">Juli</button>
+  <button type="button" class="btn btn-primary btn-lg btn-font">August</button>
+</div>
+
+<div class="btn-group-vertical">
+  <button type="button" class="btn btn-primary btn-lg btn-font">Gratis</button>
+  <button type="button" class="btn btn-primary btn-lg btn-font">500 spenn</button>
+  <button type="button" class="btn btn-primary btn-lg btn-font">1.000 spenn</button>
+  <button type="button" class="btn btn-primary btn-lg btn-font">Div. pass</button>
+</div> 
+
+      <div class="row">
+        <div class="col-md-3">
+          <a class="twitter-timeline" style="height:40" href="https://twitter.com/search?q=%23smpno" data-widget-id="458585136343162880">
+            Tweets om «#smpno»
+          </a>
+          <script>
+            !function(d,s,id){
+              var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+              if(!d.getElementById(id)){
+                js=d.createElement(s);
+                js.id=id;
+                js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+          </script>
+        </div>
+        
+        <div class="col-md-9">
+          <div id="map" style="height:400px">
+          </div>
+        </div>
+      </div>
+      
 
 <div class="row">
   <div class="col-md-3">          
-    <table border="00" cellpadding="0" class="table" style="float:left;font-family:Dosis;font-size:1.25em">
-    <tr style="font-size:2em"><td colspan="2"><b>Musikk:</b></td> </tr> 
-    <tr><td><input type=checkbox>Pop</td><td><input type=checkbox>Rock</td></tr>
-    <tr><td><input type=checkbox> Metal</td><td><input type=checkbox> Indie</td></tr>
-    <tr><td><input type=checkbox> Jazz</td><td><input type=checkbox> Blues</td></tr>
-    <tr><td><input type=checkbox> Folk</td><td><input type=checkbox> Country</td></tr>
-    <tr><td><input type=checkbox> Dans</td><td><input type=checkbox> Rap/HipHop</td></tr>
-    <tr><td><input type=checkbox> Klassisk</td><td><input type=checkbox> Teater</td></tr>
-    <tr><td><input type=checkbox> Revy</td><td><input type=checkbox> Humor</td></tr>
+    <table border="00" cellpadding="0" class="table" style="float:left;">
+      <tr style="font-size:2em"><td colspan="2"><b>Musikk:</b></td> </tr> 
+      <tr><td><input type=checkbox>Pop</td><td><input type=checkbox>Rock</td></tr>
+      <tr><td><input type=checkbox> Metal</td><td><input type=checkbox> Indie</td></tr>
+      <tr><td><input type=checkbox> Jazz</td><td><input type=checkbox> Blues</td></tr>
+      <tr><td><input type=checkbox> Folk</td><td><input type=checkbox> Country</td></tr>
+      <tr><td><input type=checkbox> Dans</td><td><input type=checkbox> Rap/HipHop</td></tr>
+      <tr><td><input type=checkbox> Klassisk</td><td><input type=checkbox> Teater</td></tr>
+      <tr><td><input type=checkbox> Revy</td><td><input type=checkbox> Humor</td></tr>
     
      <tr style="font-size:2em"><td colspan="2"> <b>Pris:</b></td> </tr> 
      <tr><td><input type=checkbox> Opp til 500 kr.</td><td><input type=checkbox> 500-1.000 kr.</td></tr>
@@ -53,12 +193,11 @@
 
      <tr style="font-size:2em"><td colspan="2"> <b>Ønsker:</b></td> </tr> 
      <tr><td><input type=checkbox> Barnevennlig</td><td><input type=checkbox> Mat og drikke</td></tr>
-          <tr><td><input type=checkbox> Alkohol</td><td><input type=checkbox> Festivalcamp</td></tr>
-          <tr><td><input type=checkbox> Transport</td><td><input type=checkbox> Tilpasset for funksjonshemmede</td></tr>
-</table>
-
-
+     <tr><td><input type=checkbox> Alkohol</td><td><input type=checkbox> Festivalcamp</td></tr>
+     <tr><td><input type=checkbox> Transport</td><td><input type=checkbox> Tilpasset for funksjonshemmede</td></tr>
+    </table>
   </div>
+
   <div class="col-md-9">        <table border=0 cellpadding=7 class="table" style="width:65%;float:left;padding-right:50px;font-family:Dosis;font-size:22px;margin-left:10px">
             <tr>
             <tr><td colspan="4"><img src="http://interaktiv.smp.no/2014/Festivaler/images/liste.png" width="400px" height="75px" alt="Hva vil du ha?" a></td></tr>  
@@ -79,7 +218,35 @@
         </table></div>
 </div>
 
+<!-- annonser med pym.js
+<div class="row">
+  <div class="col-md-6" id="annonse1"> </div>
+  <div class="col-md-6" id="annonse2"> </div>
+</div>
 
+
+
+<div id="example-1"><iframe src="//player.vimeo.com/video/46082080" width="100%" height="300px"frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> </div>
+<div id="example-2"></div>
+
+
+<div class="row">
+<a name="alle"/>
+
+  <div class="col-md-6"> <iframe src="" width="100%" height="300px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+  <div class="col-md-6"> <iframe src="//player.vimeo.com/video/46082080" width="100%" height="300px"frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/46082080">Jugendfest teaser</a> from <a href="http://vimeo.com/momentiumgiske">Momentium</a> on <a href="https://vimeo.com">Vimeo</a>.</p></div>
+</div>
+
+<div class="row">
+  <div class="col-md-12"> <iframe src="//player.vimeo.com/video/46082080" width="100%" height="300px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/46082080">Jugendfest teaser</a> from <a href="http://vimeo.com/momentiumgiske">Momentium</a> on <a href="https://vimeo.com">Vimeo</a>.</p></div>
+</div>
+
+
+
+-->
+
+
+  <!--Body end-->
 <!---
 <table border="00" cellpadding=7 class="table" style="width:25%;float:left;font-family:Dosis;font-size:22px;margin-right:100px">
 <tr><td colspan="2"><img src="http://interaktiv.smp.no/2014/Festivaler/images/krav.png" width="173px" height="75px" alt="Hva vil du ha?"></td></tr>     
@@ -110,7 +277,7 @@
         {% endfor %}
         </table>
      </div>  -->
-<img src="http://interaktiv.smp.no/2014/Festivaler/images/stripe.jpg" height="100">
+
      <!-- /container -->
 
         <script type="text/javascript">
@@ -150,5 +317,12 @@
             });
             map.addLayer(dataLayer);
         </script>
+
+        <!--pym.js-script!-->
+<script type="text/javascript" src="pym.js"></script>
+<script>
+    var pymParent = new pym.Parent('example-1', 'http://www.vimeo.com/player.vimeo.com/video/46082080', {});
+    var second = new pym.Parent('example-2', 'http://interaktiv.smp.no/2014/rbr/rbrlogo.html', {});
+</script>
     </body>
 </html>
