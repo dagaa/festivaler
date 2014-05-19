@@ -1,11 +1,16 @@
 import csv
+import urllib2
+import sys
 from flask import Flask
 from flask import render_template
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
 app = Flask(__name__)
-
-csv_path = './static/festivaler.csv'
-csv_obj = csv.DictReader(open(csv_path, 'r'))
-csv_list = list(csv_obj)
+url = 'https://docs.google.com/spreadsheet/pub?key=0AggcB0yBnLRNdG5mVjBScG0tbzdXc2d3cUFjaTZxd0E&output=csv'
+data = urllib2.urlopen(url)
+reader = csv.DictReader(data)
+csv_list = list(reader)
 csv_dict = dict([[o['id'], o] for o in csv_list])
 
 @app.route("/")
