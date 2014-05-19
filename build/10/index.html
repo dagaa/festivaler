@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|Roboto+Slab|Dosis' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="http://interaktiv.smp.no/2014/Festivaler/main.css"/>
+    <link rel="shortcut icon" type="image/png" href="http://interaktiv.smp.no/2014/Festivaler/images/favF.png"/>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2">
+    </script>
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js">
+    </script>
+    <script type="text/javascript" src="http://interaktiv.smp.no/2014/Festivaler/js/pym.js" >
+    </script>
+    
+    <!--  Mobilview først-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  
+  
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">
+            Toggle navigation
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+          
+          <span class="icon-bar">
+          </span>
+        </button>
+        <a class="navbar-brand" href="http://www.smp.no" target="_blank">
+          <img src="http://interaktiv.smp.no/2014/Festivaler/images/S.png">
+        </a>
+        
+      </div>
+      
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="#guide">
+              FESTIVALGUIDEN
+            </a>
+          </li>
+          <li>
+            <a href="#velg">
+              VELG
+            </a>
+          </li>
+          <li>
+            <a href="#alle">
+              OVERSIKT
+            </a>
+          </li>
+          <li>
+            <a href="#om">
+              OM
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  
+  
+  
+  <!--Body start-->
+  <body style= "background-color:#fffff;padding-top:70px;font-family:Dosis;font-size:2.5em;">
+    <img style="width:100%; margin-top:-20px;width:140px;height:140px" src="http://interaktiv.smp.no/2014/Festivaler/images/10.jpg">
+    <div class="container">
+      <h1 class="overskrift-detalj">Indiefjord</h1>
+      <hr>
+
+    
+
+     </div><!--end containter-->
+     <div id="map" style="width:100%; height:600px;"></div>
+
+ 
+
+<!--
+<!doctype html>
+<html lang="en">
+<img src="http://interaktiv.smp.no/2014/Festivaler/images/stripe.jpg" width="100%" height="100">
+      <head>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+        <link href='http://fonts.googleapis.com/css?family=Dosis|Bad+Script|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+        <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2"></script>
+        <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<!--  Mobilview først
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+ <div class="container" style=font-family:"Open+Sans" align="center">
+            <img src="http://interaktiv.smp.no/2014/Festivaler/images/tittel.png" width="1138px" height="200" alt="Festivaler i Nordvest. Din festivalguide">
+            <br> <br>
+        <div id="map" style="width:100%; height:400px"></div>
+        <img src="http://interaktiv.smp.no/2014/Festivaler/images/din.png" width="400px" height="75px"> 
+        <div style="font-family:Dosis;font-size:80px;color:#717375">
+            !
+        </div>
+        <p style="font-family:Dosis;font-size:22px;width:800px"></p>
+        <br>
+        <p><iframe src="//player.vimeo.com/video/46175749" width="800px" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/46175749">Fran Healy - "Sing" Sommerfesten på Giske 2011</a> from <a href="http://vimeo.com/momentiumgiske">Momentium</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+        </p>
+        <p><iframe src="http://www.smp.no/nyheter/article7757895.ece" width="800px" height="450px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </p>
+    </div>
+<img src="http://interaktiv.smp.no/2014/Festivaler/images/stripe.jpg" width="100%" height="100">
+<img src="http://interaktiv.smp.no/2014/Festivaler/images/stripe.jpg" width="100%" height="100"> -->
+     <!-- /container -->
+        <script type="text/javascript">
+            var map = L.map('map').setView([62.10055, 6.55945], 14);
+            var mapquestLayer = new L.TileLayer('http://{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
+                maxZoom: 18,
+                attribution: 'Data, imagery and map information provided by <a href="http://open.mapquest.co.uk" target="_blank">MapQuest</a>,<a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors.',
+                subdomains: ['otile1','otile2','otile3','otile4']
+            });
+            map.addLayer(mapquestLayer);
+            var marker = L.marker([62.10055, 6.55945]).addTo(map);
+        </script>
+    </body>
+</html>

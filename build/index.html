@@ -1,0 +1,993 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|Roboto+Slab|Dosis' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="http://interaktiv.smp.no/2014/Festivaler/main.css"/>
+    <link rel="shortcut icon" type="image/png" href="http://interaktiv.smp.no/2014/Festivaler/images/favF.png"/>
+
+    <meta charset="utf-8">
+    
+    <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js?2">
+    </script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js">
+    </script>
+    
+    </script>
+
+    <!--  Mobilview først-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  
+  
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">
+            Toggle navigation
+          </span>
+          <span class="icon-bar">
+          </span>
+          <span class="icon-bar">
+          </span>
+          
+          <span class="icon-bar">
+          </span>
+        </button>
+        <a class="navbar-brand" href="http://www.smp.no" target="_blank">
+          <img src="http://interaktiv.smp.no/2014/Festivaler/images/S.png">
+        </a>
+        
+      </div>
+      
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="#guide">
+              FESTIVALGUIDEN
+            </a>
+          </li>
+          <li>
+            <a href="#velg">
+              VELG
+            </a>
+          </li>
+          <li>
+            <a href="#alle">
+              OVERSIKT
+            </a>
+          </li>
+          <li>
+            <a href="#om">
+              OM
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  
+  
+  
+  <!--Body start-->
+  <body style= "background-color:#fffff;padding-top:70px;font-family:Dosis;font-size:2.5em;">
+    <div class="container">
+      <!--Annonse
+      <div>
+        <p style="font-size:0.75em;color:grey">Annonse</p>
+        <img  class="displayed" width="100%"src="http://interaktiv.smp.no/2014/Festivaler/images/Annonse.jpg" />
+      </div>
+      <br> -->
+      <!--Logo start-->
+ <!--     <div align="center">
+        
+        <a name="guide"></a>
+        <br>
+        <img width="100%" src="http://interaktiv.smp.no/2014/Festivaler/images/briller.jpg">
+        <img width="60%"src="http://interaktiv.smp.no/2014/Festivaler/images/logoB.png">
+        <p class="overskrift">
+          Finn festivalen i Nordvest som passer for deg!
+        </p>
+      </div>-->
+<div class="h2-break">
+  <img class="logoB" src="http://interaktiv.smp.no/2014/Festivaler/images/logoB.png">
+</div>
+
+ <hr>
+      <div class="h2-break">
+        <span> VELG HVA DU VIL HA: </span>
+      
+
+<p>
+  <button type="button" class="btn btn-warning btn-lg knapp">MAI</button>
+  <button type="button" class="btn btn-warning btn-lg knapp">JUNI</button>  
+  <button type="button" class="btn btn-warning btn-lg knapp">JULI</button>  
+  <button type="button" class="btn btn-warning btn-lg knapp">AUGUST</button>
+  <button type="button" class="btn btn-danger btn-lg knapp">MUSIKK</button>  
+  <button type="button" class="btn btn-danger btn-lg knapp">TEATER</button>
+  <button type="button" class="btn btn-danger btn-lg knapp">REVY</button>
+  <button type="button" class="btn btn-danger btn-lg knapp">HUMOR</button>  
+  <button type="button" class="btn btn-danger btn-lg knapp">BYGDEFESTIVAL</button>  
+    <button type="button" class="btn btn-success btn-lg knapp">GRATIS</button>
+  <button type="button" class="btn btn-success btn-lg knapp">OPP TIL 500 kr.</button>
+  <button type="button" class="btn btn-success btn-lg knapp">FRA 500-1.000 kr.</button>  
+  <button type="button" class="btn btn-success btn-lg knapp">OVER 1.000 kr.</button>  
+  <button type="button" class="btn btn-success btn-lg knapp">FESTIVALPASS</button>
+  <button type="button" class="btn btn-info btn-lg knapp">BARNEVENNLIG FESTIVAL</button>  
+  <button type="button" class="btn btn-info btn-lg knapp">FESTIVALCAMP</button>  
+  <button type="button" class="btn btn-info btn-lg knapp">TILBYR TRANSPORT</button>
+  <button type="button" class="btn btn-info btn-lg knapp">TILRETTELAGT FOR FUNKSJONSHEMMEDE</button>  
+  <br>   <button type="button" class="btn btn-primary btn-lg knapp">VIS ALLE</button>
+
+</p>
+
+<hr>
+        <!---Start liste-->
+    <div class="container marketing">
+      <div class="row">
+
+
+ 
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/6.jpg" style="width: 140px; height: 140px;">
+                  <h3>Fosnavåg Rock</h3>
+                  <p><a class="btn btn-default" href="6" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/7.jpg" style="width: 140px; height: 140px;">
+                  <h3>Gapskratten Revyfestival</h3>
+                  <p><a class="btn btn-default" href="7" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/3.jpg" style="width: 140px; height: 140px;">
+                  <h3>Dei nynorske festspela</h3>
+                  <p><a class="btn btn-default" href="3" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/1.jpg" style="width: 140px; height: 140px;">
+                  <h3>Back In The Fields Rock Festival</h3>
+                  <p><a class="btn btn-default" href="1" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/24.jpg" style="width: 140px; height: 140px;">
+                  <h3>Måløy Havfiskefestival </h3>
+                  <p><a class="btn btn-default" href="24" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/40.jpg" style="width: 140px; height: 140px;">
+                  <h3>Ørskog Bluesfest 2014 </h3>
+                  <p><a class="btn btn-default" href="40" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/33.jpg" style="width: 140px; height: 140px;">
+                  <h3>Sommardagar på Hellesylt</h3>
+                  <p><a class="btn btn-default" href="33" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/14.jpg" style="width: 140px; height: 140px;">
+                  <h3>Langevågsdagane </h3>
+                  <p><a class="btn btn-default" href="14" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/17.jpg" style="width: 140px; height: 140px;">
+                  <h3>Maritm sommarfestival</h3>
+                  <p><a class="btn btn-default" href="17" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/15.jpg" style="width: 140px; height: 140px;">
+                  <h3>Makrellfestivalen</h3>
+                  <p><a class="btn btn-default" href="15" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/27.jpg" style="width: 140px; height: 140px;">
+                  <h3>Norsk Fjellfestival</h3>
+                  <p><a class="btn btn-default" href="27" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/38.jpg" style="width: 140px; height: 140px;">
+                  <h3>Trebåtfestivalen</h3>
+                  <p><a class="btn btn-default" href="38" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/2.jpg" style="width: 140px; height: 140px;">
+                  <h3>Brøvøllsfestivalen</h3>
+                  <p><a class="btn btn-default" href="2" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/39.jpg" style="width: 140px; height: 140px;">
+                  <h3>VanylvsRåkk</h3>
+                  <p><a class="btn btn-default" href="39" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/42.jpg" style="width: 140px; height: 140px;">
+                  <h3> Ålesund Kammermusikkfestival </h3>
+                  <p><a class="btn btn-default" href="42" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/10.jpg" style="width: 140px; height: 140px;">
+                  <h3>Indiefjord</h3>
+                  <p><a class="btn btn-default" href="10" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/9.jpg" style="width: 140px; height: 140px;">
+                  <h3>Go with the Flø</h3>
+                  <p><a class="btn btn-default" href="9" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/31.jpg" style="width: 140px; height: 140px;">
+                  <h3>Smak av Ulstein</h3>
+                  <p><a class="btn btn-default" href="31" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/41.jpg" style="width: 140px; height: 140px;">
+                  <h3>Ålesund Båtfestival</h3>
+                  <p><a class="btn btn-default" href="41" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/20.jpg" style="width: 140px; height: 140px;">
+                  <h3>Midtsommardagar</h3>
+                  <p><a class="btn btn-default" href="20" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/16.jpg" style="width: 140px; height: 140px;">
+                  <h3>Malakoff Rockfestival</h3>
+                  <p><a class="btn btn-default" href="16" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/19.jpg" style="width: 140px; height: 140px;">
+                  <h3>Midsundfestivalen</h3>
+                  <p><a class="btn btn-default" href="19" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/29.jpg" style="width: 140px; height: 140px;">
+                  <h3>Opplev Hareid</h3>
+                  <p><a class="btn btn-default" href="29" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/30.jpg" style="width: 140px; height: 140px;">
+                  <h3>RaumaRock</h3>
+                  <p><a class="btn btn-default" href="30" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/13.jpg" style="width: 140px; height: 140px;">
+                  <h3>Kyrkjehola Kulturbeite</h3>
+                  <p><a class="btn btn-default" href="13" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/26.jpg" style="width: 140px; height: 140px;">
+                  <h3>Naturfestivalen</h3>
+                  <p><a class="btn btn-default" href="26" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/22.jpg" style="width: 140px; height: 140px;">
+                  <h3>Molde International Jazz Festival (Moldejazz)</h3>
+                  <p><a class="btn btn-default" href="22" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/4.jpg" style="width: 140px; height: 140px;">
+                  <h3>Fjord Cadenza</h3>
+                  <p><a class="btn btn-default" href="4" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/18.jpg" style="width: 140px; height: 140px;">
+                  <h3>Matfestivalen i Ålesund</h3>
+                  <p><a class="btn btn-default" href="18" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/23.jpg" style="width: 140px; height: 140px;">
+                  <h3>Myldredagane</h3>
+                  <p><a class="btn btn-default" href="23" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/32.jpg" style="width: 140px; height: 140px;">
+                  <h3>Sommardagane i Utvik</h3>
+                  <p><a class="btn btn-default" href="32" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/37.jpg" style="width: 140px; height: 140px;">
+                  <h3>Trandalblues</h3>
+                  <p><a class="btn btn-default" href="37" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/21.jpg" style="width: 140px; height: 140px;">
+                  <h3>Midtsommerjazz</h3>
+                  <p><a class="btn btn-default" href="21" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/34.jpg" style="width: 140px; height: 140px;">
+                  <h3>Sommerfesten på Giske</h3>
+                  <p><a class="btn btn-default" href="34" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/11.jpg" style="width: 140px; height: 140px;">
+                  <h3>Jugendfest</h3>
+                  <p><a class="btn btn-default" href="11" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/28.jpg" style="width: 140px; height: 140px;">
+                  <h3>Oldendagane</h3>
+                  <p><a class="btn btn-default" href="28" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/8.jpg" style="width: 140px; height: 140px;">
+                  <h3>Glopperock</h3>
+                  <p><a class="btn btn-default" href="8" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/35.jpg" style="width: 140px; height: 140px;">
+                  <h3>Stryn Gummibåtfestival</h3>
+                  <p><a class="btn btn-default" href="35" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/36.jpg" style="width: 140px; height: 140px;">
+                  <h3>Strynefestivalen</h3>
+                  <p><a class="btn btn-default" href="36" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/12.jpg" style="width: 140px; height: 140px;">
+                  <h3>Kulturdagane i Hornindal</h3>
+                  <p><a class="btn btn-default" href="12" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/5.jpg" style="width: 140px; height: 140px;">
+                  <h3>Folven sykkelfestival</h3>
+                  <p><a class="btn btn-default" href="5" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/25.jpg" style="width: 140px; height: 140px;">
+                  <h3>Måløydagene</h3>
+                  <p><a class="btn btn-default" href="25" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/.jpg" style="width: 140px; height: 140px;">
+                  <h3>Sunnmøre Middelalderfestival</h3>
+                  <p><a class="btn btn-default" href="" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/.jpg" style="width: 140px; height: 140px;">
+                  <h3>Bjørnsonfestivalen</h3>
+                  <p><a class="btn btn-default" href="" role="button">Les mer »</a></p>
+              </div>
+  
+                  <div class="col-lg-4">
+                  <img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="http://interaktiv.smp.no/2014/festivaler/images/.jpg" style="width: 140px; height: 140px;">
+                  <h3>Stryn motorfestival</h3>
+                  <p><a class="btn btn-default" href="" role="button">Les mer »</a></p>
+              </div>
+  
+      </div><!-- /.row -->
+    </div> <!-- /.container marketing-->
+
+
+         <div id="map" style="width:100%; height:500px;"></div>
+
+    <!--End liste-->
+      </div>
+
+ 
+      </div>
+ 
+
+
+        <script type="text/javascript">
+            var map = L.map('map').setView([62.480906, 6.464081], 8);
+            var mapquestLayer = new L.TileLayer('http://{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
+                maxZoom: 18,
+                attribution: '',subdomains: ['otile1','otile2','otile3','otile4']
+            });
+            map.addLayer(mapquestLayer);
+            var data = {
+              "type": "FeatureCollection",
+              "features": [
+                /* list python start */
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "6"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [5,63429, 62,34075]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "7"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [7,12625, 62,52093]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "3"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.07215, 62.18214]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "1"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.18482, 62.48221]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "24"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [5.11189, 61.93256]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "40"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.81062, 62.48371]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "33"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.86082, 62.08780]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "14"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.18369, 62.43789]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "17"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [5.63107, 62.34138]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "15"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [5.63107, 62.34138]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "27"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [7.68722, 62.56745]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "38"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [5.84823, 62.34203]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "2"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.64662, 62.29194]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "39"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [5.58315, 62.19502]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "42"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.14948, 62.47223]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "10"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.55945, 62.10055]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "9"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [5.85096, 62.40318]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "31"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [5.84697, 62.34261]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "41"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.15236, 62.47127]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "20"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [7.23655, 62.25542]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "16"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [5.99155, 61.90626]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "19"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.67164, 62.67282]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "29"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.02966, 62.36904]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "30"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [7.68728, 62.56928]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "13"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.98630, 62.38203]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "26"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.12964, 62.20030]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "22"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [7.15548, 62.73600]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "4"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.67544, 62.50424]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "18"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.15680, 62.47442]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "23"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.44583, 62.59463]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "32"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.51889, 61.80658]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "37"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.50354, 62.25362]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "21"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.15641, 62.47274]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "34"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.04235, 62.51019]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "11"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.18788, 62.46928]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "28"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.80933, 61.83379]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "8"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.21690, 61.76660]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "35"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.77685, 61.91325]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "36"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [7.1669054031, 61.917967998]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "12"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.52418, 61.96921]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "5"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [7.16682, 61.91804]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": "25"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [5.11416, 61.93280]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": ""
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.23463, 62.46842]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": ""
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [7.16073, 62.73724]
+                  }
+                },
+                
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "festival": "",
+                    "id": ""
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [6.72265, 61.90448]
+                  }
+                }
+                
+                /* list python end */
+              ]
+            };
+             var dataLayer = L.geoJson(data, {
+                onEachFeature: function(feature, layer) {
+                    layer.bindPopup(
+                        '<a href="' + feature.properties.id + '/">' +
+                            feature.properties.full_name +
+                        '</a>'
+                    );
+                }
+            });
+            map.addLayer(dataLayer);
+        </script>
+
+        <!--pym.js-script!-->
+
+    </body>
+</html>
